@@ -15,7 +15,7 @@ author:
   location: "Upenn"
   email: "haichao@seas.upenn.edu"
 
-  defaults:
+defaults:
   # _posts
   - scope:
       path: ""
