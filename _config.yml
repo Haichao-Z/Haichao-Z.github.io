@@ -1,3 +1,15 @@
 theme: jekyll-theme-minimal
 title: Electronic Pet
 description: This is the website displaying our final project for ESE5190 in 2024 fall!
+
+# Theme Settings
+theme: minimal-mistakes-jekyll # only if using gem method
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Author
+author:
+  name: "Your Name"
+  avatar: ""
+  bio: "Your bio"
+  location: "Your Location"
+  email: "your@email.com"
