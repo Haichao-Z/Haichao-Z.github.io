@@ -1,0 +1,580 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MVP Demo - Electronic Pet</title>
+<meta name="description" content="This is the website displaying our final project for ESE5190 in 2024 fall!">
+
+
+  <meta name="author" content="Your Name">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Electronic Pet">
+<meta property="og:title" content="MVP Demo">
+<meta property="og:url" content="http://localhost:4000/MVP_DEMO.html">
+
+
+  <meta property="og:description" content="This is the website displaying our final project for ESE5190 in 2024 fall!">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/MVP_DEMO.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Electronic Pet Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Electronic Pet
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <h2 id="mvp-demo">MVP Demo</h2>
+
+<h3 id="1-system-block-diagram">1. System Block Diagram</h3>
+
+<center>
+&lt;img src="Images/New_System_Block_Diagram.png", alt = "New Block Diagram", Width="700",height="auto"&gt;
+</center>
+
+<h3 id="2-hardware-implementation">2. Hardware Implementation</h3>
+
+<ol>
+  <li>
+    <p><strong>MCU</strong>: The ATmega328PB MCU controls all other modules and provides power to them.</p>
+  </li>
+  <li>
+    <p><strong>Gesture sensor</strong>: The gesture sensor utilizes four directional photodiodes to sense reflected IR energy (sourced by the integrated LED) to convert a physical motion to a digital information.</p>
+  </li>
+  <li>
+    <p><strong>LCD screen</strong>: The LCD screen displays animations to enhance interaction between users and the electronic pet.</p>
+  </li>
+  <li>
+    <p><strong>Servo motor</strong>: Two servo motors control the raising and lowering of the electronic pet’s arms (it can dance!).</p>
+  </li>
+  <li>
+    <p><strong>Buzzer</strong>: The buzzer is used for notifications during successful interactions. The driving circuit of the buzzer includes a transistor and a resistor.</p>
+  </li>
+  <li>
+    <p><strong>HID board</strong>: Through the HID board, the electronic pet can send commands to the computer to perform certain operations.</p>
+  </li>
+</ol>
+
+<h3 id="3-firmware-implementation">3. Firmware Implementation</h3>
+
+<ol>
+  <li><strong>Gesture sensor</strong>:</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Communicates with the MCU via I2C.</p>
+  </li>
+  <li>
+    <p>Recognizes gestures moving in four directions: up, down, left, and right.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Different movement directions cause the four directional photodiodes to receive different reflected IR energy, which is then converted into digital signals stored in registers. By evaluating the values from the four directions, the movement direction of the gesture can be identified.</p>
+</blockquote>
+
+<ol>
+  <li><strong>LCD screen</strong>:</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Communicates with the MCU via SPI.</p>
+  </li>
+  <li>
+    <p>Detection Prompt: When a gesture movement is successfully detected, it displays an arrow corresponding to the movement direction (up, down, left, or right).</p>
+  </li>
+  <li>
+    <p>Health Reminder: When the user has been using the device for a certain time, it shows a water cup icon to remind them to drink water and take a break.</p>
+  </li>
+  <li>
+    <p>Idle State: Displays the electronic pet’s cute eyes.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Servo motor</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Set PD0 and PD1 as outputs</p>
+  </li>
+  <li>
+    <p>Using timer 3 and timer 4, set the Fast PWM mode and 64 prescaler and set the value of ICR to 4999, which outputs 50Hz frequency. FS90R servo motors need to operate under 50Hz frequency.</p>
+  </li>
+  <li>
+    <p>According to the datasheet, FS90R servo rotates clockwisely when it works under 2ms. It stops when it works under 1.5ms and it rotates counter-clockwisely when it works under 1ms. Therefore, OCnA (n=3 &amp; 4) is set to 250,365 and 499 for control the rotation of servo.</p>
+  </li>
+  <li>
+    <p>Owing to the fact that FS90R servo is a continuous servo, the position of the servo is controlled by the time it rotates. Thus, delay function is used in this part.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Buzzer</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Set PD3 as an output</p>
+  </li>
+  <li>
+    <p>Using timer 2, set Fast PWM mode to control the volumn of buzzer and use timer prescaler to adjust the frequency of Buzzer to nearly 1kHz, which is comfortable for users to hear.</p>
+  </li>
+  <li>
+    <p>Enable the overflow for timer 2. And after each time overflows, a preset time flag will be added one. Only when it gets the preset value (the time we expect to beep), the buzzer will beep for a second, which is operated in the main function.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>HID board</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Communicates with PC via USB D+/D- differential signals, given flag signals received from MCU.</p>
+  </li>
+  <li>
+    <p>When the recognized gesture is down, HID board will open google Chrome application installed in the MAC.</p>
+  </li>
+  <li>
+    <p>When the recognized gesture is right, HID board will switch the screen of the PC.</p>
+  </li>
+</ul>
+
+<h3 id="4-software-requirements-specification-srs">4. Software Requirements Specification (SRS)</h3>
+
+<ul>
+  <li>SRS 01 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The system shall do the task of screenshot when the gesture sensor detects the moving up hand.</p>
+</blockquote>
+
+<p>The link of video display is:<a href="https://drive.google.com/file/d/1fkpihpQ44amjBUFiKkw18MEKBuSZ3KU-/view?usp=drive_link">V1</a></p>
+
+<ul>
+  <li>SRS 02 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The system shall launch google Chrome when the gesture sensor detects the moving down hand.</p>
+</blockquote>
+
+<p>The link of video display is:<a href="https://drive.google.com/file/d/1Wh1JHAG3Pr6LVd0mXqYp__kRukJqDz1s/view?usp=drive_link">V2</a></p>
+
+<ul>
+  <li>SRS 03 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The system shall switch PC screen when the gesture sensor detects the moving right hand.</p>
+</blockquote>
+
+<p>The link of video display is:<a href="https://drive.google.com/file/d/1EapzakLrTIgx123OXrF2mTiJWEVJ3b9T/view?usp=drive_link">V3</a></p>
+
+<ul>
+  <li>SRS 04 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The system shall open the task manager when the gesture sensor detects the moving left hand.</p>
+</blockquote>
+
+<p>The link of video display is:<a href="https://drive.google.com/file/d/1xH8n1ZiWqEgTUIaBlixUrCzzgj85gfq1/view?usp=drive_link">V4</a></p>
+
+<ul>
+  <li>SRS 05 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display down arrow.</p>
+</blockquote>
+
+<center>
+&lt;img src="Images/Down Arrow.jpg", alt="Down Arrow",height="500",weight="auto"&gt;
+</center>
+
+<ul>
+  <li>SRS 06 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display up arrow.</p>
+</blockquote>
+
+<center>
+&lt;img src="Images/Up Arrow.jpg", alt="Up Arrow",height="500",weight="auto"&gt;
+</center>
+
+<ul>
+  <li>SRS 07 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display right arrow.</p>
+</blockquote>
+
+<center>
+&lt;img src="Images/Right Arrow.jpg", alt="Right Arrow",height="500",weight="auto"&gt;
+</center>
+
+<ul>
+  <li>SRS 08 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display left arrow.</p>
+</blockquote>
+
+<center>
+&lt;img src="Images/Left Arrow.jpg", alt="Left Arrow",height="500",weight="auto"&gt;
+</center>
+
+<ul>
+  <li>SRS 09 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display animations when the system is in idle state.</p>
+</blockquote>
+
+<center>
+&lt;img src="Images/Face.jpg", alt="Left Arrow",height="500",weight="auto"&gt;
+</center>
+
+<ul>
+  <li>SRS 10 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display animated responses to user gestures.</p>
+</blockquote>
+
+<p>The link of display video is: <a href="https://drive.google.com/file/d/1IOBCJcWFccStGwdMlVPXu7W4NL4uqNJs/view?usp=drive_link">V5</a>.</p>
+
+<ul>
+  <li>SRS 11 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD shall display wellness reminder animations. And in this case, we set time period is 10s to improve test efficiency. To be specific, buzzer shall beep within this time period and a wellness reminder animation will be displayed.</p>
+</blockquote>
+
+<p>The link of display video is: <a href="https://drive.google.com/file/d/1-ddZrnf8HIaAwiVmv1yV4MZT98EUigUu/view?usp=drive_link">V6</a>.</p>
+
+<ul>
+  <li>SRS 12 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>When the gesture sensor detects a hand movement to left, the left arm of the robot shall raise upwards and lowered after a period of time. The right arm shall stay still.</p>
+</blockquote>
+
+<p>The link of display video is: <a href="https://drive.google.com/file/d/1mLXMoj3JGx8evmCGHVzJQdQ7xlr-j9_C/view?usp=drive_link">V7</a>.</p>
+
+<ul>
+  <li>SRS 13 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>When the gesture sensor detects a hand movement to right, the right arm of the robot shall raise upwards and lowered after a period of time. The left arm shall stay still.</p>
+</blockquote>
+
+<p>The link of display video is: <a href="https://drive.google.com/file/d/1ahBXgcYvGRqWWBL1ar0cll6QrIZncVmL/view?usp=drive_link">V8</a>.</p>
+
+<ul>
+  <li>SRS 14 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>When the gesture sensor detects a hand movement to up, both the left arm and the right arm of the robot shall raise upwards for a long distance and lowered after a period of time.</p>
+</blockquote>
+
+<p>The link of display video is: <a href="https://drive.google.com/file/d/1C2JQ0_Hdg2LdXJzhIfmaxhJmGpWxYvA6/view?usp=drive_link">V9</a>.</p>
+
+<ul>
+  <li>SRS 15 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>When the gesture sensor detects a hand movement to down, both the left arm and the right arm of the robot shall raise upwards for a short distance and lowered after a period of time.
+The link of display video is: <a href="https://drive.google.com/file/d/19ImU_UHjelTiXKCMLaanyTp2y1ZOPTpi/view?usp=drive_link">V10</a>.</p>
+</blockquote>
+
+<h3 id="5-hardware-requirements-specification-hrs">5. Hardware Requirements Specification (HRS)</h3>
+
+<ul>
+  <li>HRS 01 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The electronic pet shall be connected to the PC through a wired connection, which is used for both power supply and USB communication.</p>
+</blockquote>
+
+<p><img src="/Images/HRS01.jpg" alt="HRS01" /></p>
+
+<ul>
+  <li>HRS 02 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>A gesture sensor shall communicates with PC via I2C protocal.</p>
+</blockquote>
+
+<p><img src="/Images/HRS02.jpg" alt="HRS02" /></p>
+
+<ul>
+  <li>HRS 03 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>A gesture sensor shall recognize four gestures: up, down, right, left.</p>
+</blockquote>
+
+<p><img src="/Images/HRS03.jpg" alt="HRS03" /></p>
+
+<ul>
+  <li>HRS 04 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>A 160x128 resolution LCD shall be used to show the real time, the recognized gesture and wellness reminder.</p>
+</blockquote>
+
+<p><img src="/Images/HRS04.jpg" alt="HRS04" /></p>
+
+<ul>
+  <li>HRS 05 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>The LCD communicates with MCU via SPI protoccal.</p>
+</blockquote>
+
+<p><img src="/Images/HRS05.jpg" alt="HRS05" /></p>
+
+<ul>
+  <li>HRS 06 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>Two motors shall be driven by the signal with 50Hz frequency. Motors shall stop under 1.5ms pulse, move clockwisely under 2ms pulse and move counter-clockwisely under 1ms pulse.</p>
+</blockquote>
+
+<p><img src="/Images/HRS06.jpg" alt="HRS06" /></p>
+
+<ul>
+  <li>HRS 07 <strong>[Made it!]</strong></li>
+</ul>
+
+<blockquote>
+  <p>An HID board shall be used to emulate a PC keyboard, allowing it to send commands to PC via USB D+/D- differential signals.</p>
+</blockquote>
+
+<p><img src="/Images/HRS07.jpg" alt="HRS07" /></p>
+
+<h3 id="6-remaining-elements">6. Remaining Elements</h3>
+
+<p>The 3D-print models of the head, body, arms and base of the electronic pet has been designed, and are awaiting printing and assembly.</p>
+
+<center>
+&lt;img src="Images/3D Printing.png", alt="3D Printing(1)",height="500",weight="auto"&gt;
+</center>
+
+<center>
+&lt;img src="Images/3D Printing(2).png", alt="3D Printing(2)",height="500",weight="auto"&gt;
+</center>
+<p>Overview:</p>
+
+<center>
+&lt;img src="Images/overall model.png", alt="Left Arrow",height="500",weight="auto"&gt;
+</center>
+
+<p>Head:</p>
+
+<center>
+&lt;img src="Images/new head.png", alt="Left Arrow",height="500",weight="auto"&gt;
+</center>
+
+<p>Body：</p>
+
+<center>
+&lt;img src="Images/body.jpg", alt="Left Arrow",height="500",weight="auto"&gt;
+</center>
+
+<p>Arms:</p>
+
+<center>
+&lt;img src="Images/arm.png", alt="Left Arrow",height="500",weight="auto"&gt;
+</center>
+<p>&lt;/center&gt;</p>
+
+<h3 id="7-device-demo">7. Device Demo</h3>
+
+<p>In this case, four gestures will correspond to four different computer commands, including switching screen, screenshot, opening task manager and opening Chrome. Besides, the buzzer will beep within a time period of 20s in order to improve test efficiency.</p>
+
+<p>The demo video: <a href="https://drive.google.com/file/d/1m-dDR5gsSzl5uwqw9SJPlLUTUPSYQjW5/view?usp=drive_link">V11</a></p>
+
+<h3 id="8-risk-assessment">8. Risk Assessment</h3>
+
+<p>The riskest part remaining of our project is the 3d print model of head, this is because that we are not sure whether it is added to the print queue before the thanksgiving holiday, even though we sent it before the thanksgiving holidays. In order to de-risk this, there are two methods:</p>
+
+<ol>
+  <li>
+    <p>We will go to RPL to inquire about printing progress. If it cannot be guarantee to finish printing before demonstration day, we will order the printing in the addLab, which guarantees to finish in three days.</p>
+  </li>
+  <li>
+    <p>We can also hang the gesture sensor in front of the forehead of the original robot head and use tape to fix it, although it would be a bit unsightly.</p>
+  </li>
+</ol>
+
+<h3 id="9-questions-for-the-teaching-team">9. Questions for the Teaching Team</h3>
+
+<p>None</p>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Electronic Pet. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
