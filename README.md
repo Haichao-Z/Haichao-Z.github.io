@@ -4,8 +4,8 @@
     * Team Name: Water
     * Team Members: Haichao Zhao, Zeng Li, Chi Zong
     * Github Repository URL: https://github.com/upenn-embedded/final-project-electronic-pet
-    * Github Pages Website URL: [for final submission]
-    * Description of hardware: (embedded hardware, laptop, etc) ATmega328PB
+    * Github Pages Website URL: (https://haichao-z.github.io/)
+    * Description of hardware: ATmega328PB, Laptop, HS90R, Gesture Sensor, Adafruit ItsyBitsy 32u4. 
 
 ## Final Project Report
 
