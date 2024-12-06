@@ -18,21 +18,13 @@ The link of final demo video:[final demo](https://drive.google.com/file/d/1fFg5g
 
 ### 2. Images
 
-<center>
-<img src="Images/pic_front.jpg", alt="pic_front",height="500",weight="auto">
-</center>
+![Image1](Images/pic_front.jpg)
 
-<center>
-<img src="Images/pic_back.jpg", alt="pic_back",height="500",weight="auto">
-</center>
+![Image2](Images/pic_back.jpg)
 
-<center>
-<img src="Images/pic_side1.jpg", alt="pic_side1",height="500",weight="auto">
-</center>
+![Image3](Images/pic_side1.jpg)
 
-<center>
-<img src="Images/pic_side2.jpg", alt="pic_side2",height="500",weight="auto">
-</center>
+![Image4](Images/pic_side2.jpg)
 
 ### 3. Results
 
@@ -70,41 +62,32 @@ The link of video:[V4](https://drive.google.com/file/d/1Th-9U5OhTPvPvhbq1ClqkLB-
 
 > The LCD shall display down arrow.
 
-<center>
-<img src="Images/pic_down.jpg", alt="Down Arrow",height="500",weight="auto">
-</center>
+![SRS05](Images/pic_down.jpg)
 
 - SRS 06
 
 > The LCD shall display up arrow.
 
-<center>
-<img src="Images/pic_up.jpg", alt="Up Arrow",height="500",weight="auto">
-</center>
+![SRS06](Images/pic_up.jpg)
+
 
 - SRS 07
 
 > The LCD shall display right arrow.
 
-<center>
-<img src="Images/pic_right.jpg", alt="Right Arrow",height="500",weight="auto">
-</center>
+![SRS07](Images/pic_right.jpg)
 
 - SRS 08
 
 > The LCD shall display left arrow.
 
-<center>
-<img src="Images/pic_left.jpg", alt="Left Arrow",height="500",weight="auto">
-</center>
+![SRS08](Images/pic_left.jpg)
 
 - SRS 09
 
 > The LCD shall display animations when the system is in idle state.
 
-<center>
-<img src="Images/pic_front.jpg", alt="Idle State",height="500",weight="auto">
-</center>
+![SRS09](Images/pic_front.jpg)
 
 - SRS 10
 
@@ -200,9 +183,7 @@ Lastly, a lot of thanks to the course instructor Nicholas McGill-Gardner, and ou
 
 ### 1. System Block Diagram
 
-<center>
-<img src="Images/New_System_Block_Diagram.png", alt = "New Block Diagram", Width="700",height="auto">
-</center>
+![MVP Demo1](Images/New_System_Block_Diagram.png)
 
 ### 2. Hardware Implementation
 
@@ -294,41 +275,31 @@ The link of video display is:[V4](https://drive.google.com/file/d/1xH8n1ZiWqEgTU
 
 > The LCD shall display down arrow.
 
-<center>
-<img src="Images/Down Arrow.jpg", alt="Down Arrow",height="500",weight="auto">
-</center>
+![MVP Demo SRS 05](Images/Down%20Arrow.jpg)
 
 - SRS 06 **[Made it!]**
 
 > The LCD shall display up arrow.
 
-<center>
-<img src="Images/Up Arrow.jpg", alt="Up Arrow",height="500",weight="auto">
-</center>
+![MVP Demo SRS 06](Images/Up%20Arrow.jpg)
 
 - SRS 07 **[Made it!]**
 
 > The LCD shall display right arrow.
 
-<center>
-<img src="Images/Right Arrow.jpg", alt="Right Arrow",height="500",weight="auto">
-</center>
+![MVP Demo SRS 07](Images/Right%20Arrow.jpg)
 
 - SRS 08 **[Made it!]**
 
 > The LCD shall display left arrow.
 
-<center>
-<img src="Images/Left Arrow.jpg", alt="Left Arrow",height="500",weight="auto">
-</center>
+![MVP Demo SRS 08](Images/Left%20Arrow.jpg)
 
 - SRS 09 **[Made it!]**
 
 > The LCD shall display animations when the system is in idle state.
 
-<center>
-<img src="Images/Face.jpg", alt="Left Arrow",height="500",weight="auto">
-</center>
+![MVP Demo SRS 09](Images/Face.jpg)
 
 - SRS 10 **[Made it!]**
 
@@ -415,36 +386,17 @@ The link of display video is: [V10](https://drive.google.com/file/d/19ImU_UHjelT
 
 The 3D-print models of the head, body, arms and base of the electronic pet has been designed, and are awaiting printing and assembly.
 
-<center>
-<img src="Images/3D Printing.png", alt="3D Printing(1)",height="500",weight="auto">
-</center>
+![Remaining Element 1](Images/3D%20Printing.png)
 
-<center>
-<img src="Images/3D Printing(2).png", alt="3D Printing(2)",height="500",weight="auto">
-Overview:
+![Remaining Element 2](Images/3D%20Printing(2).png)
 
-<center>
-<img src="Images/overall model.png", alt="Left Arrow",height="500",weight="auto">
-</center>
+![Remaining Element 3](Images/overall%20model.png)
 
-Head:
+![Remaining Element 4](Images/new%20head.png)
 
-<center>
-<img src="Images/new head.png", alt="Left Arrow",height="500",weight="auto">
-</center>
+![Remaining Element 5](Images/body.jpg)
 
-Body：
-
-<center>
-<img src="Images/body.jpg", alt="Left Arrow",height="500",weight="auto">
-</center>
-
-Arms:
-
-<center>
-<img src="Images/arm.png", alt="Left Arrow",height="500",weight="auto">
-</center>
-</center>
+![Remaining Element 6](Images/arm.png)
 
 ### 7. Device Demo
 
@@ -537,23 +489,15 @@ Task 2: Thinking about physical construction of electronic pet writing down with
 
 1. We discuss with TA and Professor to get approval for the project. And we modify some parts in project proposal based on the suggestions from TA and professor. To be specific, we modify the contexts of some parts, like system block diagrams, software requirements specification, hardware requirement specification, components and methodology. The commits in github are shown below:
 
-<center>
-<img src="Images/Trial_Sprintf_commit1.png", alt = "Trial_Sprintf_commit1", Width="700",height="auto">
-</center>
+![Last Week Progress 1](Images/Trial_Sprintf_commit1.png)
 
-<center>
-<img src="Images/Trial_Sprintf_commit2.png", alt = "Trial_Sprintf_commit2", Width="700",height="auto">
-</center>
+![Last Week Progress 2](Images/Trial_Sprintf_commit2.png)
 
 2. We ordered parts based on the components written in the proposal. We have ordered one Flash, one Espressif ESP32-S3-EYE, two Light, Ambient Sensor Evaluation Board, one Real Time Clock, one Adafruit ItsyBitsy 32u4 and two servo motor. Total price is $99.11, which is within the budget. Request forms are shown below:
 
-<center>
-<img src="Images/Part_order_1.png", alt = "Part_order_1", Width="1200",height="auto">
-</center>
+![Last Week Progress 1](Images/Part_order_1.png)
 
-<center>
-<img src="Images/Parts_order.png", alt = "Part_order_2", Width="700",height="auto">
-</center>
+![Last Week Progress 1](Images/Parts_order.png)
 
 3. We determine the next week plan.
 
@@ -614,15 +558,11 @@ We aim at building an electronic pet with LCD based on one hand gesture recognit
 
 ### 4. System Block Diagram
 
-<center>
-<img src="Images/System_Block_Diagram.png", alt = "Block Diagram", Width="700",height="auto">
-</center>
+![Proposal 1](Images/System_Block_Diagram.png)
 
 ### 5. Design Sketches
 
-<center>
-<img src="Images/Design Sketch_Hardware.jpg", alt = "Design Sketches", Width="700",height="auto">
-</center>
+![Proposal 2](Images/Design%20Sketch_Hardware.jpg)
 
 ### 6. Software Requirements Specification (SRS)
 
@@ -738,9 +678,7 @@ In the final demostration, a robot will be shown. It is connected to PC. When PC
 5. Timer and interrupt is used to beep buzzer.
 6. Using the preset function in the LCD to draw figure.
 
-<center>
-<img src="Sketch.drawio.png", alt = "Design Sketches", Width="700",height="auto">
-</center>
+![Proposal 3](Sketch.drawio.png)
 
 ### 10. Evaluation
 
